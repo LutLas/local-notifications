@@ -1,9 +1,17 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>post-details</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/posts"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ data?.title.rendered }}</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-
+ 
+<ion-content class="ion-padding">
+  
+  <div *ngIf="data">
+    <img *ngIf="data.media_url" [src]="data.media_url">
+    <div [innerHTML]="data.content.rendered" class="ion-padding"></div>
+  </div>
+ 
 </ion-content>

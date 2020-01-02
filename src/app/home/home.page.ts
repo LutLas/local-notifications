@@ -102,12 +102,7 @@ export class HomePage {
 
   }
 
-  goToPostDetails(post){
-    let navigationExtras: any = {
-      queryParams: {
-        special: JSON.stringify(post)
-      }
-    };
-    this.Router.navigate(['post-details'], navigationExtras);
+  goToPostDetails(post) {
+    this.Router.navigate([`post-details/${post.id}`]);
   }
 }
